@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+
+    <!-- Add your change sets here -->
+    <changeSet id="1" author="ravi">
+        <createTable tableName="Users">
+            <column name="id" type="int" autoIncrement="true" startWith="101" incrementBy="1">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="name" type="Varchar(30)" >
+                <constraints nullable="false"/>
+            </column>
+            <column name ="email" type="Varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="insert_users" author="ravi">
+        <insert tableName="Users">
+            <column name="name" value="John Doe"/>
+            <column name="email" value="john@gmail.com"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_users_to_table" author="ravi">
+        <insert tableName="Users">
+            <column name="name" value="Jane Smith"/>
+            <column name="email" value="jane@gmail.com"/>
+        </insert>
+
+        <insert tableName="Users">
+            <column name="name" value="Michael Johnson"/>
+            <column name="email" value="michael@gmail.com"/>
+        </insert>
+
+        <insert tableName="Users">
+            <column name="name" value="Emily Brown"/>
+            <column name="email" value="emily@gmail.com"/>
+        </insert>
+
+        <insert tableName="Users">
+            <column name="name" value="David Lee"/>
+            <column name="email" value="david@gmail.com"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_users_table" author="ravi">
+        <insert tableName="Users">
+            <column name="name" value="Sarah Williams"/>
+            <column name="email" value="sarah@gmail.com"/>
+        </insert>
+
+        <insert tableName="Users">
+            <column name="name" value="Daniel Wilson"/>
+            <column name="email" value="daniel@gmail.com"/>
+        </insert>
+
+        <insert tableName="Users">
+            <column name="name" value="Jessica Taylor"/>
+            <column name="email" value="jessica@gmail.com"/>
+        </insert>
+
+        <insert tableName="Users">
+            <column name="name" value="Kevin"/>
+            <column name="email" value="kevin@gmail.com"/>
+        </insert>
+
+        <insert tableName="Users">
+            <column name="name" value="Laura Anderson"/>
+            <column name="email" value="laura@gmail.com"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

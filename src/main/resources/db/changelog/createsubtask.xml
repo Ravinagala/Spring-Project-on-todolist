@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+    <changeSet id="5" author="ravi">
+        <createTable tableName="subtask">
+            <column name="id" type="int" autoIncrement="true" startWith="1" incrementBy="1">
+                <constraints primaryKey="true"/>
+            </column>
+            
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="task_id" type="int">
+
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="add_fk" author="ravi">
+        <addForeignKeyConstraint baseTableName="subtask" baseColumnNames="task_id" constraintName="fk_task_id" referencedTableName="task"
+                                 referencedColumnNames="id" onDelete="CASCADE"/>
+    </changeSet>
+
+    <changeSet id="insert_subtask" author="ravi">
+        <insert tableName="subtask">
+            <column name="name" value="Subtask 1"/>
+            <column name="description" value="Design layout mockups"/>
+            <column name="status" value="Not Started"/>
+            <column name="task_id" value="1"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_subtask_table" author="ravi">
+        <insert tableName="subtask">
+            <column name="name" value="Subtask 2"/>
+            <column name="description" value="API Integration"/>
+            <column name="status" value="In Progress"/>
+            <column name="task_id" value="2"/>
+        </insert>
+
+        <insert tableName="subtask">
+            <column name="name" value="Subtask 3"/>
+            <column name="description" value="Schema Design"/>
+            <column name="status" value="Completed"/>
+            <column name="task_id" value="3"/>
+        </insert>
+
+        <insert tableName="subtask">
+            <column name="name" value="Subtask 4"/>
+            <column name="description" value="Data Preprocessing"/>
+            <column name="status" value="Not Started"/>
+            <column name="task_id" value="4"/>
+        </insert>
+
+        <insert tableName="subtask">
+            <column name="name" value="Subtask 5"/>
+            <column name="description" value="Color Palette Selection"/>
+            <column name="status" value="In Progress"/>
+            <column name="task_id" value="5"/>
+        </insert>
+
+        <insert tableName="subtask">
+            <column name="name" value="Subtask 6"/>
+            <column name="description" value="Module Documentation"/>
+            <column name="status" value="Completed"/>
+            <column name="task_id" value="6"/>
+        </insert>
+
+        <insert tableName="subtask">
+            <column name="name" value="Subtask 7"/>
+            <column name="description" value="Social Sharing Feature"/>
+            <column name="status" value="Not Started"/>
+            <column name="task_id" value="7"/>
+        </insert>
+
+        <insert tableName="subtask">
+            <column name="name" value="Subtask 8"/>
+            <column name="description" value="Character Movement"/>
+            <column name="status" value="In Progress"/>
+            <column name="task_id" value="8"/>
+        </insert>
+
+        <insert tableName="subtask">
+            <column name="name" value="Subtask 9"/>
+            <column name="description" value="Training Data Collection"/>
+            <column name="status" value="Completed"/>
+            <column name="task_id" value="9"/>
+        </insert>
+
+        <insert tableName="subtask">
+            <column name="name" value="Subtask 10"/>
+            <column name="description" value="Requirement gathering"/>
+            <column name="status" value="Not Started"/>
+            <column name="task_id" value="10"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

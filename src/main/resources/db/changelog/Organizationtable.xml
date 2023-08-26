@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+
+    <!---Add your change sets here-->
+
+    <changeSet id="2" author="ravi">
+        <createTable tableName="organization">
+            <column name="id" type = "int" autoIncrement="true" startWith="1" incrementBy="1">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="name" type = "varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="founded_by" type = "varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="insert_organization" author="ravi">
+        <insert tableName="organization">
+            <column name="name" value="TechCorp"/>
+            <column name="founded_by" value="John Doe"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_organizations_table" author="ravi">
+        <insert tableName="organization">
+            <column name="name" value="InnovateNow"/>
+            <column name="founded_by" value="Jane Smith"/>
+        </insert>
+
+        <insert tableName="organization">
+            <column name="name" value="WebMasters"/>
+            <column name="founded_by" value="Michael Johnson"/>
+        </insert>
+
+        <insert tableName="organization">
+            <column name="name" value="CodeCrafters"/>
+            <column name="founded_by" value="Emily Brown"/>
+        </insert>
+
+        <insert tableName="organization">
+            <column name="name" value="DataSolutions"/>
+            <column name="founded_by" value="David Lee"/>
+        </insert>
+
+        <insert tableName="organization">
+            <column name="name" value="SoftWorks"/>
+            <column name="founded_by" value="Sarah Williams"/>
+        </insert>
+
+        <insert tableName="organization">
+            <column name="name" value="AppGenius"/>
+            <column name="founded_by" value="Daniel Wilson"/>
+        </insert>
+
+        <insert tableName="organization">
+            <column name="name" value="ByteCraft"/>
+            <column name="founded_by" value="Jessica Taylor"/>
+        </insert>
+
+        <insert tableName="organization">
+            <column name="name" value="FutureTech"/>
+            <column name="founded_by" value="Kevin"/>
+        </insert>
+
+        <insert tableName="organization">
+            <column name="name" value="FusionTech"/>
+            <column name="founded_by" value="Laura Anderson"/>
+        </insert>
+    </changeSet>
+
+
+
+</databaseChangeLog>

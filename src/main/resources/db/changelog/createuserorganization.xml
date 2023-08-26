@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+    
+    <changeSet id="6" author="ravi">
+        
+        <createTable tableName="userorganization">
+            <column name="id" type="int" autoIncrement="true" startWith="1" incrementBy="1">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="int">
+                
+            </column>
+            
+            <column name="org_id" type="int">
+                
+            </column>
+            
+            <column name="status" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="joined_on" type="date">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="joined-by" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            
+        </createTable>
+    </changeSet>
+
+    <changeSet id="add_fk01" author="ravi">
+        <addForeignKeyConstraint baseTableName="userorganization" baseColumnNames="user_id" constraintName="fk_userorganization_user_id" referencedTableName="Users"
+                                 referencedColumnNames="id" />
+<!--    </changeSet>-->
+
+<!--    <changeSet id="add_fk_1" author="ravi">-->
+        <addForeignKeyConstraint baseTableName="userorganization" baseColumnNames="org_id" constraintName="fk_userorganization_org_id" referencedTableName="organization"
+                                 referencedColumnNames="id" />
+    </changeSet>
+
+    <changeSet id="insert_userorganization" author="ravi">
+        <insert tableName="userorganization">
+            <column name="user_id" value="101"/>
+            <column name="org_id" value="1"/>
+            <column name="status" value="Active"/>
+            <column name="joined_on" value="2023-01-15"/>
+            <column name="joined-by" value="John Doe"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_userorganization_table" author="ravi">
+        <insert tableName="userorganization">
+            <column name="user_id" value="102"/>
+            <column name="org_id" value="2"/>
+            <column name="status" value="Active"/>
+            <column name="joined_on" value="2023-02-10"/>
+            <column name="joined-by" value="Jane Smith"/>
+        </insert>
+
+        <insert tableName="userorganization">
+            <column name="user_id" value="103"/>
+            <column name="org_id" value="3"/>
+            <column name="status" value="Active"/>
+            <column name="joined_on" value="2023-03-20"/>
+            <column name="joined-by" value="Michael Johnson"/>
+        </insert>
+
+        <insert tableName="userorganization">
+            <column name="user_id" value="104"/>
+            <column name="org_id" value="4"/>
+            <column name="status" value="Active"/>
+            <column name="joined_on" value="2023-04-18"/>
+            <column name="joined-by" value="Emily Brown"/>
+        </insert>
+
+        <insert tableName="userorganization">
+            <column name="user_id" value="105"/>
+            <column name="org_id" value="5"/>
+            <column name="status" value="Active"/>
+            <column name="joined_on" value="2023-05-22"/>
+            <column name="joined-by" value="David Lee"/>
+        </insert>
+
+        <insert tableName="userorganization">
+            <column name="user_id" value="106"/>
+            <column name="org_id" value="6"/>
+            <column name="status" value="Active"/>
+            <column name="joined_on" value="2023-06-27"/>
+            <column name="joined-by" value="Sarah Williams"/>
+        </insert>
+
+        <insert tableName="userorganization">
+            <column name="user_id" value="107"/>
+            <column name="org_id" value="7"/>
+            <column name="status" value="Active"/>
+            <column name="joined_on" value="2023-07-15"/>
+            <column name="joined-by" value="Daniel Wilson"/>
+        </insert>
+
+        <insert tableName="userorganization">
+            <column name="user_id" value="108"/>
+            <column name="org_id" value="8"/>
+            <column name="status" value="Active"/>
+            <column name="joined_on" value="2023-08-15"/>
+            <column name="joined-by" value="Jessica Taylor"/>
+        </insert>
+
+        <insert tableName="userorganization">
+            <column name="user_id" value="109"/>
+            <column name="org_id" value="9"/>
+            <column name="status" value="Active"/>
+            <column name="joined_on" value="2023-09-05"/>
+            <column name="joined-by" value="Kevin"/>
+        </insert>
+
+        <insert tableName="userorganization">
+            <column name="user_id" value="110"/>
+            <column name="org_id" value="10"/>
+            <column name="status" value="Active"/>
+            <column name="joined_on" value="2023-10-02"/>
+            <column name="joined-by" value="Laura Anderson"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>    

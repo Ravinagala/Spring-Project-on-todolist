@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+
+       <!--Add your change set for project here-->
+
+    <changeSet id="3" author="ravi">
+        <createTable tableName="project">
+            <column name="id" type="int" autoIncrement="true" startWith="1" incrementBy="1">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="description" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="org_id" type ="int">
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="addFK" author="ravi">
+        <addForeignKeyConstraint baseTableName="project" baseColumnNames="org_id" constraintName="fk_org_id" referencedTableName="organization"
+                                 referencedColumnNames="id" onDelete="CASCADE"/>
+
+    </changeSet>
+
+    <changeSet id="insert_project" author="ravi">
+        <insert tableName="project">
+            <column name="name" value="Project A"/>
+            <column name="description" value="Developing a new website"/>
+            <column name="org_id" value="1"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_project_table" author="ravi">
+        <insert tableName="project">
+            <column name="name" value="Project B"/>
+            <column name="description" value="Creating a mobile app"/>
+            <column name="org_id" value="2"/>
+        </insert>
+
+        <insert tableName="project">
+            <column name="name" value="Project C"/>
+            <column name="description" value="Building an e-Commerce platform"/>
+            <column name="org_id" value="3"/>
+        </insert>
+
+        <insert tableName="project">
+            <column name="name" value="Project D"/>
+            <column name="description" value="Designing a Data Tool"/>
+            <column name="org_id" value="4"/>
+        </insert>
+
+        <insert tableName="project">
+            <column name="name" value="Project E"/>
+            <column name="description" value="Enhancing User Experience"/>
+            <column name="org_id" value="5"/>
+        </insert>
+
+        <insert tableName="project">
+            <column name="name" value="Project F"/>
+            <column name="description" value="Develop a software suite"/>
+            <column name="org_id" value="6"/>
+        </insert>
+
+        <insert tableName="project">
+            <column name="name" value="Project G"/>
+            <column name="description" value="Building a social network"/>
+            <column name="org_id" value="7"/>
+        </insert>
+
+        <insert tableName="project">
+            <column name="name" value="Project H"/>
+            <column name="description" value="Creating a game"/>
+            <column name="org_id" value="8"/>
+        </insert>
+
+        <insert tableName="project">
+            <column name="name" value="Project I"/>
+            <column name="description" value="Designing a machine learning system"/>
+            <column name="org_id" value="9"/>
+        </insert>
+
+        <insert tableName="project">
+            <column name="name" value="Project J"/>
+            <column name="description" value="Creating a new Software product"/>
+            <column name="org_id" value="10"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

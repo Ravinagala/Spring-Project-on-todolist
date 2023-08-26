@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+    <changeSet id="4" author="ravi">
+        <createTable tableName="task">
+            <column name="id" type="int" autoIncrement="true" startWith="1" incrementBy="1">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="name" type = "varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="int">
+            </column>
+            <column name="project_id" type="int">
+
+            </column>
+        </createTable>
+    </changeSet>
+    
+    <changeSet id="add_FK" author="ravi">
+        
+        <addForeignKeyConstraint baseTableName="task" baseColumnNames="user_id" constraintName="fk_user_id" referencedTableName="Users"
+                                 referencedColumnNames="id" onDelete="CASCADE"/>
+    </changeSet>
+
+    <changeSet id="add_fk2" author="ravi">
+
+        <addForeignKeyConstraint baseTableName="task" baseColumnNames="project_id" constraintName="fk_project_id" referencedTableName="project"
+                                 referencedColumnNames="id" onDelete="CASCADE"/>
+    </changeSet>
+
+    <changeSet id="insert_task" author="ravi">
+        <insert tableName="task">
+            <column name="name" value="Task1"/>
+            <column name="description" value="Implement homepage design"/>
+            <column name="status" value="In Progress"/>
+            <column name="user_id" value="101"/>
+            <column name="project_id" value="1"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_task_table" author="ravi">
+        <insert tableName="task">
+            <column name="name" value="Task2"/>
+            <column name="description" value="BackEnd development"/>
+            <column name="status" value="Not Started"/>
+            <column name="user_id" value="102"/>
+            <column name="project_id" value="2"/>
+        </insert>
+
+        <insert tableName="task">
+            <column name="name" value="Task3"/>
+            <column name="description" value="DataBase Setup"/>
+            <column name="status" value="Completed"/>
+            <column name="user_id" value="103"/>
+            <column name="project_id" value="3"/>
+        </insert>
+
+        <insert tableName="task">
+            <column name="name" value="Task4"/>
+            <column name="description" value="Data Collection Module"/>
+            <column name="status" value="In Progress"/>
+            <column name="user_id" value="104"/>
+            <column name="project_id" value="4"/>
+        </insert>
+
+        <insert tableName="task">
+            <column name="name" value="Task5"/>
+            <column name="description" value="UI/UX enhancements"/>
+            <column name="status" value="Not Started"/>
+            <column name="user_id" value="105"/>
+            <column name="project_id" value="5"/>
+        </insert>
+
+        <insert tableName="task">
+            <column name="name" value="Task6"/>
+            <column name="description" value="Module Testing"/>
+            <column name="status" value="Completed"/>
+            <column name="user_id" value="106"/>
+            <column name="project_id" value="6"/>
+        </insert>
+
+        <insert tableName="task">
+            <column name="name" value="Task7"/>
+            <column name="description" value="User Authentication"/>
+            <column name="status" value="In Progress"/>
+            <column name="user_id" value="107"/>
+            <column name="project_id" value="7"/>
+        </insert>
+
+        <insert tableName="task">
+            <column name="name" value="Task8"/>
+            <column name="description" value="Game Mechanics design"/>
+            <column name="status" value="Not Started"/>
+            <column name="user_id" value="108"/>
+            <column name="project_id" value="8"/>
+        </insert>
+
+        <insert tableName="task">
+            <column name="name" value="Task9"/>
+            <column name="description" value="Algorithm Development"/>
+            <column name="status" value="Completed"/>
+            <column name="user_id" value="109"/>
+            <column name="project_id" value="9"/>
+        </insert>
+
+        <insert tableName="task">
+            <column name="name" value="Task10"/>
+            <column name="description" value="Feature Planning"/>
+            <column name="status" value="In Progress"/>
+            <column name="user_id" value="110"/>
+            <column name="project_id" value="10"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

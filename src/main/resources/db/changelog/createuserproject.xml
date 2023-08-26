@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+        
+    
+    <changeSet id="7" author="ravi">
+        <createTable tableName="userproject">
+            <column name="id" type="int" autoIncrement="true" startWith="1" incrementBy="1">
+                <constraints primaryKey="true"/>
+            </column>
+            
+            <column name="project_id" type="int">
+                
+            </column>
+            
+            <column name="user_id" type="int">
+                
+            </column>
+            
+            <column name="status" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="assigned_by" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="assigned_on" type="date">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+
+    <changeSet id="add_foreignkey_contraint" author="ravi">
+        <addForeignKeyConstraint baseTableName="userproject" baseColumnNames="project_id" constraintName="fk_userproject_project_id" referencedTableName="project"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="userproject" baseColumnNames="user_id" constraintName="fk_userproject_user_id" referencedTableName="Users"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+    
+    <changeSet id="insert_userproject" author="ravi">
+        <insert tableName="userproject">
+            <column name="project_id" value="1"/>
+            <column name="user_id" value="101"/>
+            <column name="status" value="Assigned"/>
+            <column name="assigned_by" value="John Doe"/>
+            <column name="assigned_on" value="2023-01-20"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_userproject_table" author="ravi">
+        <insert tableName="userproject">
+            <column name="project_id" value="2"/>
+            <column name="user_id" value="102"/>
+            <column name="status" value="Assigned"/>
+            <column name="assigned_by" value="Jane Smith"/>
+            <column name="assigned_on" value="2023-02-15"/>
+        </insert>
+
+        <insert tableName="userproject">
+            <column name="project_id" value="3"/>
+            <column name="user_id" value="103"/>
+            <column name="status" value="Assigned"/>
+            <column name="assigned_by" value="Michael Johnson"/>
+            <column name="assigned_on" value="2023-03-25"/>
+        </insert>
+
+        <insert tableName="userproject">
+            <column name="project_id" value="4"/>
+            <column name="user_id" value="104"/>
+            <column name="status" value="Assigned"/>
+            <column name="assigned_by" value="Emily Brown"/>
+            <column name="assigned_on" value="2023-04-23"/>
+        </insert>
+
+        <insert tableName="userproject">
+            <column name="project_id" value="5"/>
+            <column name="user_id" value="105"/>
+            <column name="status" value="Assigned"/>
+            <column name="assigned_by" value="David Lee"/>
+            <column name="assigned_on" value="2023-05-28"/>
+        </insert>
+
+        <insert tableName="userproject">
+            <column name="project_id" value="6"/>
+            <column name="user_id" value="106"/>
+            <column name="status" value="Assigned"/>
+            <column name="assigned_by" value="Sarah Williams"/>
+            <column name="assigned_on" value="2023-06-30"/>
+        </insert>
+
+        <insert tableName="userproject">
+            <column name="project_id" value="7"/>
+            <column name="user_id" value="107"/>
+            <column name="status" value="Assigned"/>
+            <column name="assigned_by" value="Daniel Wilson"/>
+            <column name="assigned_on" value="2023-07-20"/>
+        </insert>
+
+        <insert tableName="userproject">
+            <column name="project_id" value="8"/>
+            <column name="user_id" value="108"/>
+            <column name="status" value="Assigned"/>
+            <column name="assigned_by" value="Jessica Taylor"/>
+            <column name="assigned_on" value="2023-08-20"/>
+        </insert>
+
+        <insert tableName="userproject">
+            <column name="project_id" value="9"/>
+            <column name="user_id" value="109"/>
+            <column name="status" value="Assigned"/>
+            <column name="assigned_by" value="Kevin"/>
+            <column name="assigned_on" value="2023-09-10"/>
+        </insert>
+
+        <insert tableName="userproject">
+            <column name="project_id" value="10"/>
+            <column name="user_id" value="110"/>
+            <column name="status" value="Assigned"/>
+            <column name="assigned_by" value="Laura Anderson"/>
+            <column name="assigned_on" value="2023-10-05"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>
